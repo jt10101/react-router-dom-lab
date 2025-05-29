@@ -14,17 +14,11 @@ const mailboxsample = [
 
 const App = () => {
   const [mailboxes, setMailboxes] = useState(mailboxsample);
-  const [boxInput, setboxInput] = useState();
 
-  const handleChange = (event) => {
-    let newboxInput = event.target.value;
-    console.log(event.target.value);
-    setboxInput(newboxInput);
-  };
-
-  const addBox = (data) => {
-    let newMailbox = {};
-    newMailbox = { ...newMailbox, data };
+  const addBox = (input) => {
+    let newID = mailboxes.length + 1;
+    input._id = newID;
+    let newMailbox = [...mailboxes, input];
     setMailboxes(newMailbox);
   };
 
@@ -44,10 +38,7 @@ const App = () => {
           path="/mailboxes"
           element={<MailboxList mailboxes={mailboxes} />}
         />
-        <Route
-          path="/new-mailbox"
-          element={<MailboxForm handleChange={handleChange} />}
-        />
+        <Route path="/new-mailbox" element={<MailboxForm addBox={addBox} />} />
         <Route
           path="/mailboxes/:mailboxID"
           element={<MailboxDetails mailboxes={mailboxes} />}
