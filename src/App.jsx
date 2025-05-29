@@ -28,6 +28,7 @@ const App = () => {
   const sendMessage = (input) => {
     let newLetters = [...letters, input];
     setLetters(newLetters);
+    console.log(newLetters);
   };
   return (
     <>
