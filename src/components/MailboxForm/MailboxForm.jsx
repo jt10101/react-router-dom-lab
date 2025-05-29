@@ -29,12 +29,11 @@ const MailboxForm = (props) => {
         onChange={handleNameChange}
       ></input>
       <h4>Select a Boxsize:</h4>
-      <input
-        type="text"
-        name="boxSize"
-        onChange={handleSizeChange}
-        placeholder="Placeholder for Selection"
-      ></input>
+      <select onChange={handleSizeChange}>
+        <option value="Small">Small</option>
+        <option value="Medium">Medium</option>
+        <option value="Large">Small</option>
+      </select>
       <br />
       <button type="submit" onClick={handleSubmit}>
         Submit
