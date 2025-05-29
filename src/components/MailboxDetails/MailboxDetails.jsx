@@ -7,10 +7,12 @@ const MailboxDetails = (props) => {
   );
   return (
     <>
-      <h1>Mailbox {selectedBox._id} </h1>
-      <h3>Details</h3>
-      <p>Boxholder: {selectedBox.boxOwner}</p>
-      <p>Box size: {selectedBox.boxSize}</p>
+      <div className="mailbox">
+        <h1>Mailbox {selectedBox._id} </h1>
+        <h3>Details</h3>
+        <p>Boxholder: {selectedBox.boxOwner}</p>
+        <p>Box size: {selectedBox.boxSize}</p>
+      </div>
     </>
   );
 };

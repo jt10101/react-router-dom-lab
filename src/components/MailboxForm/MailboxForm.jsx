@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
 const MailboxForm = (props) => {
   const [createBoxName, setBoxName] = useState();
   const [createBoxSize, setBoxSize] = useState();
+  const navigate = useNavigate();
 
   const handleNameChange = (event) => {
     setBoxName(event.target.value);
@@ -17,6 +19,7 @@ const MailboxForm = (props) => {
       boxSize: createBoxSize,
       boxOwner: createBoxName,
     });
+    navigate("/mailboxes");
   };
   return (
     <>
